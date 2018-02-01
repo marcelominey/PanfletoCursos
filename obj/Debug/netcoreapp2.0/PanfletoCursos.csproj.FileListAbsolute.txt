@@ -1,0 +1,10 @@
+C:\Users\22386773809\backend\PanfletoCursos\bin\Debug\netcoreapp2.0\PanfletoCursos.deps.json
+C:\Users\22386773809\backend\PanfletoCursos\bin\Debug\netcoreapp2.0\PanfletoCursos.runtimeconfig.json
+C:\Users\22386773809\backend\PanfletoCursos\bin\Debug\netcoreapp2.0\PanfletoCursos.runtimeconfig.dev.json
+C:\Users\22386773809\backend\PanfletoCursos\bin\Debug\netcoreapp2.0\PanfletoCursos.dll
+C:\Users\22386773809\backend\PanfletoCursos\bin\Debug\netcoreapp2.0\PanfletoCursos.pdb
+C:\Users\22386773809\backend\PanfletoCursos\obj\Debug\netcoreapp2.0\PanfletoCursos.csproj.CoreCompileInputs.cache
+C:\Users\22386773809\backend\PanfletoCursos\obj\Debug\netcoreapp2.0\PanfletoCursos.AssemblyInfoInputs.cache
+C:\Users\22386773809\backend\PanfletoCursos\obj\Debug\netcoreapp2.0\PanfletoCursos.AssemblyInfo.cs
+C:\Users\22386773809\backend\PanfletoCursos\obj\Debug\netcoreapp2.0\PanfletoCursos.dll
+C:\Users\22386773809\backend\PanfletoCursos\obj\Debug\netcoreapp2.0\PanfletoCursos.pdb
