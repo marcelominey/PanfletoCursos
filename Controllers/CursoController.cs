@@ -8,48 +8,48 @@ namespace PanfletoCursos.Controllers
 {
 
     [Route("api/[controller]")]
-    public class AreaController : Controller
+    public class CursoController : Controller
     {
-        Area area = new Area();
+        Curso curso = new Curso();
         readonly PanfletoContexto contexto; //não quero que contexto tenha nenhum valor associado, por isso o readonly
 
-        public AreaController(PanfletoContexto contexto)
+        public CursoController(PanfletoContexto contexto)
         {
             this.contexto = contexto;
         }
 
         [HttpGet]
-        public IEnumerable<Area> Listar(){
-            return contexto.Area.ToList();
-            //Esse DbSet é Banco de dados virtual tipado com Area
+        public IEnumerable<Curso> Listar(){
+            return contexto.Curso.ToList();
+            //Esse DbSet é Banco de dados virtual tipado com Curso
             //Esse é o Get.
             //ToList: listando todo mundo
         }
         [HttpGet("{id}")]
-        public Area Listar(int id){
-            return contexto.Area.Where(x=>x.IdArea==id).FirstOrDefault();
+        public Curso Listar(int id){
+            return contexto.Curso.Where(x=>x.IdCurso==id).FirstOrDefault();
             //Buscando uma área específica
         }
         [HttpPost]
-        public void Cadastrar([FromBody] Area arere){
+        public void Cadastrar([FromBody] Curso curcu){
             //Usando Entity Framework, só adiciona e salva.
             //Não precisa daquele INSERT INTO... etc
-            contexto.Area.Add(arere);
+            contexto.Curso.Add(curcu);
             contexto.SaveChanges();
         }
         [HttpPut("{id}")]
-        public IActionResult Atualizar(int id,[FromBody] Area area){
-            if(area==null || area.IdArea!=id){
+        public IActionResult Atualizar(int id,[FromBody] Curso curso){
+            if(curso==null || curso.IdCurso!=id){
                 return BadRequest();
             }
-            var are = contexto.Area.FirstOrDefault(x=>x.IdArea==id);
-            if(are==null)
+            var cur = contexto.Curso.FirstOrDefault(x=>x.IdCurso==id);
+            if(cur==null)
             return NotFound();
 
-            are.IdArea = area.IdArea;
-            are.NomeArea = area.NomeArea;
+            cur.IdCurso = curso.IdCurso;
+            cur.NomeCurso = curso.NomeCurso;
 
-            contexto.Area.Update(are);
+            contexto.Curso.Update(cur);
             int rs = contexto.SaveChanges();
 
             if(rs>0)
@@ -59,16 +59,16 @@ namespace PanfletoCursos.Controllers
         }
         [HttpDelete("{id}")]
         public IActionResult Apagar(int id){
-            var arere = contexto.Area.Where(x=>x.IdArea==id).FirstOrDefault();
-            if(arere == null){
+            var curcu = contexto.Curso.Where(x=>x.IdCurso==id).FirstOrDefault();
+            if(curcu == null){
                 return NotFound();
             }
-            contexto.Area.Remove(area);
+            contexto.Curso.Remove(curso);
             int rs = contexto.SaveChanges();
             if(rs>0)
             return Ok();
             else
             return BadRequest();
         }
-    }
+    } 
 }

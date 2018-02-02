@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using PanfletoCursos;
+using PanfletoCursos.Dados;
 
 namespace PanfletoCursos
 {
@@ -14,7 +17,23 @@ namespace PanfletoCursos
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            var ambiente = BuildWebHost(args);//.Run();
+            using (var escopo = ambiente.Services.CreateScope())
+            {
+                var servico = escopo.ServiceProvider;
+                try
+                {
+                    var contexto = servico.GetRequiredService<PanfletoContexto>();
+                    IniciarBanco.Inicializar(contexto);
+                }
+                catch (Exception e)
+                {
+                    var saida = servico.GetRequiredService<ILogger<Program>>();
+                    saida.LogError(e, "Error");
+                }
+            }
+
+            ambiente.Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>

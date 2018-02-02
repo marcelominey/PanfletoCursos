@@ -13,7 +13,7 @@ namespace PanfletoCursos.Models
 
         [Required(ErrorMessage="Campo obrigatório")]
         [Column(Order=1)]
-        public int NomeArea { get; set; }
+        public string NomeArea { get; set; }
         
         public ICollection<Curso> Curso { get; set; }
     }

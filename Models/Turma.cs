@@ -26,7 +26,7 @@ namespace PanfletoCursos.Models
 
         [Required(ErrorMessage="Campo obrigatório")]
         [Column(Order=4)]
-        public string[] DiasSemana { get; set; }
+        public string DiasSemana { get; set; }
 
         [Required(ErrorMessage="Campo obrigatório")]
         [Column(Order=5)]
