@@ -36,7 +36,7 @@ namespace PanfletoCursos
             services.AddMvc();
 
             //Pela primeira vez, vamos criar um SWAGGER. 
-            services.AddSwaggerGen(c => {
+               services.AddSwaggerGen(c=> {
                 c.SwaggerDoc("V1", new Info{
                     Version = "V1",
                     Title = "Cursos Online",
@@ -46,16 +46,16 @@ namespace PanfletoCursos
                         Name = "Fernando Henrique",
                         Email = "fernando.guerra@corujasdev.com.br",
                         Url = "www.corujasdev.com.br"
-                    }
-                });
-                var basePath = AppContext.BaseDirectory;
-                var xmlPath = Path.Combine(basePath, "PanfletoCursos.xml");
+                    }});
 
-                c.IncludeXmlComments(xmlPath);
+                    var basePath = AppContext.BaseDirectory;
+                    var xmlPath = Path.Combine(basePath, "PanfletoCursos.xml");
+
+                    c.IncludeXmlComments(xmlPath);
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+  // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -63,11 +63,17 @@ namespace PanfletoCursos
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
-            app.UseSwagger();
-            app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
-            });
+           app.UseMvc();
+
+           app.UseSwagger();
+
+           app.UseSwaggerUI(c => {
+               c.SwaggerEndpoint("/swagger/V1/swagger.json","API v1");
+           });
+
+           app.Run(async(context) => {
+               await context.Response.WriteAsync("Você saiu da rota");
+           });
         }
     }
 }

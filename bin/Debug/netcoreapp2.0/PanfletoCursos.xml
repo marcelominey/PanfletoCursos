@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PanfletoCursos</name>
+    </assembly>
+    <members>
+        <member name="M:PanfletoCursos.Controllers.AreaController.Listar">
+            <sumary>
+            Retorna uma lista de áreas
+            </sumary>
+            <returns>Lista de áreas</returns>
+            <response code="200">Retorna uma lista de areas</response>
+            <response code="400">Ocorreu um erro</response>
+        </member>
+        <member name="M:PanfletoCursos.Controllers.AreaController.Listar(System.Int32)">
+            <sumary>
+            Retorna uma área pelo seu Id
+            </sumary>
+            <returns>Id da área</returns>
+            <response code="200">Retorna uma área</response>
+            <response code="400">Ocorreu um erro</response>
+            <response code="404">Área não encontrada</response>
+        </member>
+        <member name="M:PanfletoCursos.Controllers.AreaController.Cadastrar(PanfletoCursos.Models.Area)">
+            <sumary>
+            Cadastra uma nova área
+            </sumary>
+            <returns>Nova área para registrar</returns>
+            <remarks>
+            Modelo de dados que deve ser enviado para cadastrar a area request:
+            
+                POST /Area
+                {
+                    "nome" : "nome da area"
+                }    
+            </remarks>
+            <response code="200">Retorna a área cadastrada</response>
+            <response code="400">Ocorreu um erro</response>
+        </member>
+    </members>
+</doc>

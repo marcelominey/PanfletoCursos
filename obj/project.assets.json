@@ -12647,28 +12647,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\22386773809\\.nuget\\packages\\": {},
+    "C:\\Users\\marce\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\22386773809\\backend\\PanfletoCursos\\PanfletoCursos.csproj",
+      "projectUniqueName": "g:\\PanfletoCursos2\\PanfletoCursos.csproj",
       "projectName": "PanfletoCursos",
-      "projectPath": "C:\\Users\\22386773809\\backend\\PanfletoCursos\\PanfletoCursos.csproj",
-      "packagesPath": "C:\\Users\\22386773809\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\22386773809\\backend\\PanfletoCursos\\obj\\",
+      "projectPath": "g:\\PanfletoCursos2\\PanfletoCursos.csproj",
+      "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
+      "outputPath": "g:\\PanfletoCursos2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\22386773809\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

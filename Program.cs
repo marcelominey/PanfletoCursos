@@ -17,7 +17,7 @@ namespace PanfletoCursos
     {
         public static void Main(string[] args)
         {
-            var ambiente = BuildWebHost(args);//.Run();
+            var ambiente = BuildWebHost(args);
             using (var escopo = ambiente.Services.CreateScope())
             {
                 var servico = escopo.ServiceProvider;
